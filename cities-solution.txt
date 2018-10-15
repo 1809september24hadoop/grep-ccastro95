@@ -1,0 +1,44 @@
+#1
+grep '^Z' cities.txt
+
+#2
+grep 'gan\>' cities.txt
+grep 'gan$' cities.txt
+
+#3
+grep '^[ADE]' cities.txt
+
+#4
+grep '\<.ar' cities.txt
+
+#5
+grep -vc '^C' cities.txt
+
+#6
+--Comments: I was previously unaware of the regex that
+specified the number of characters, but after figuring it out,
+I was able to complete this. I was also previously unaware that
+this required the egrep command.
+
+grep -E '\<['[:punct:]'a-zA-Z]{14,}\>' cities.txt
+
+#7
+grep -c '^B' cities.txt
+
+#8
+grep -o 'd' cities.txt | wc -l
+
+#9
+--Comments: I was previously unaware of the regex \n, but after
+figuring out that it basically duplicates what the nth
+character was, I used this for the answer.
+
+grep -E '(.)\1$' cities.txt
+
+#10
+--Comments: This one gave me a bit of trouble before I
+completely understood the \n regex, but after a bit of work
+I figured that you could use two \n regex's back to back as
+shown below.
+
+grep -Ei '^(.)(.)(.)\2\1$' cities.txt
