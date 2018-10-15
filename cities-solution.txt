@@ -6,10 +6,10 @@ grep 'gan\>' cities.txt
 grep 'gan$' cities.txt
 
 #3
-grep '^[ADE]' cities.txt
+grep -c '^[ADE]' cities.txt
 
 #4
-grep '\<.ar' cities.txt
+grep -c '\<.ar' cities.txt
 
 #5
 grep -vc '^C' cities.txt
